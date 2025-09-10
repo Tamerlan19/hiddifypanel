@@ -64,8 +64,6 @@
                             <i class="fa-brands fa-windows fa-margin1"></i> <i
                                 class="fa-brands fa-apple fa-margin1"></i> <i class="fa-brands fa-linux fa-margin1"></i>
                             {{_('desktop')}}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#all_configs" data-toggle="tab"><i
-                                class="fa-solid fa-grip fa-margin"></i> {{_('user.home.all_configs')}}</a></li>
 
                 </ul>
             </div><!-- /.card-header -->
@@ -88,9 +86,6 @@
                     <!-- /.tab-pane -->
                     <div class="tab-pane {{" active" if ua.is_pc else "" }}" id="windows">
                         {% include "home/windows.html" %}
-                    </div>
-                    <div class="tab-pane" id="all_configs">
-                        {% include 'home/all-configs.html'%}
                     </div>
                     <!-- /.tab-pane -->
                 </div>
