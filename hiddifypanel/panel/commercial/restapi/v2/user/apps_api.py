@@ -124,13 +124,8 @@ class AppAPI(MethodView):
                 apps_data += ([hiddify_next_dto, v2rayn_dto, clash_verge_rev_dto ])
             case Platform.ios:
                 hiddify_next_dto = self.__get_hiddify_next_app_dto()
-                singbox_dto = self.__get_singbox_app_dto()
-                stash_dto = self.__get_stash_app_dto()
-                shadowrocket_dto = self.__get_shadowrocket_app_dto()
-                foxray_dto = self.__get_foxray_app_dto()
-                streisand_dto = self.__get_streisand_app_dto()
-                loon_dto = self.__get_loon_app_dto()
-                apps_data += ([hiddify_next_dto, singbox_dto, streisand_dto, stash_dto, shadowrocket_dto, foxray_dto, loon_dto])
+                v2raytun_dto = self.__get_v2raytun_app_dto()
+                apps_data += ([hiddify_next_dto, v2raytun_dto])
             case Platform.linux:
                 hiddify_next_dto = self.__get_hiddify_next_app_dto()
                 clash_verge_rev_dto = self.__get_clash_verge_rev_app_dto()
@@ -161,6 +156,7 @@ class AppAPI(MethodView):
         return None
 
     def __get_all_apps_dto(self):
+        v2raytun_app_dto = self.__get_v2raytun_app_dto()
         v2rayn_app_dto = self.__get_v2rayn_app_dto()
         v2rayng_app_dto = self.__get_v2rayng_app_dto()
         # hiddifyng_app_dto = self.__get_hiddifyng_app_dto()
@@ -176,7 +172,8 @@ class AppAPI(MethodView):
         clash_verge_rev_app_dto = self.__get_clash_verge_rev_app_dto()
         hiddify_next_app_dto = self.__get_hiddify_next_app_dto()
         return [
-            v2rayn_app_dto, v2rayng_app_dto, 
+            v2raytun_app_dto,
+            v2rayn_app_dto, v2rayng_app_dto,
             foxray_app_dto, shadowrocket_app_dto, streisand_app_dto,
             loon_app_dto, stash_app_dto,  singbox_app_dto, cmfa_app_dto, clash_verge_rev_app_dto, hiddify_next_app_dto
         ]
@@ -214,6 +211,8 @@ class AppAPI(MethodView):
             url = base + static_url_for(filename='apps-icon/hiddify_clash.ico')
         elif app_name == _('app.nekobox.title'):
             url = base + static_url_for(filename='apps-icon/nekobox.ico')
+        elif app_name == 'V2RayTun':
+            url = base + static_url_for(filename='apps-icon/v2rayng.ico')
 
         return url
 
@@ -262,6 +261,18 @@ class AppAPI(MethodView):
         github_ins_url = latest_url.split('releases/')[0] + f'releases/download/{version}/v2rayNG_{version}_universal.apk'
         google_play_ins_url = 'https://play.google.com/store/apps/details?id=com.v2ray.ang'
         dto.install = [self.__get_app_install_dto(AppInstallType.apk, github_ins_url), self.__get_app_install_dto(AppInstallType.google_play, google_play_ins_url)]
+        return dto
+
+    def __get_v2raytun_app_dto(self):
+        dto = AppSchema()
+        dto.title = 'V2RayTun'
+        dto.description = 'V2RayTun iOS client'
+        dto.icon_url = self.__get_app_icon_url('V2RayTun')
+        dto.guide_url = ''
+        dto.deeplink = f'v2raytun://import/{self.user_panel_url}'
+
+        ins_url = 'https://apps.apple.com/us/app/v2raytun/id6472061640'
+        dto.install = [self.__get_app_install_dto(AppInstallType.app_store, ins_url)]
         return dto
 
 
