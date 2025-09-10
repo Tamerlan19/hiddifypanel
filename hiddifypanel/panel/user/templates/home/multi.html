@@ -105,40 +105,6 @@
 
 <div class="row">
     <div class="col-12">
-        <!-- Custom Tabs -->
-        <div class="card">
-            <div class="card-header d-flex p-0">
-                <h3 class="card-title p-0"></h3>
-                <ul class="nav nav-pills p-2">
-
-                    <li class="nav-item"><a class="nav-link" href="#speedtest" data-toggle="tab"><i
-                                class="fa-solid fa-gauge-high fa-margin"></i> {{_('user.home.speedtest.title')}}</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#doh" data-toggle="tab"><i
-                                class="fa-solid fa-sitemap fa-margin"></i> {{_('user.home.doh')}}</a></li>
-                </ul>
-            </div><!-- /.card-header -->
-            <div class="card-body">
-                <div class="tab-content">
-                    <div class="tab-pane active" id="default">
-                        {{_('user.home.select_tool')}}
-                    </div>
-
-                    <div class="tab-pane" id="speedtest">
-                        {% include 'home/speedtest.html' %}
-                    </div>
-                    <!-- /.tab-pane -->
-                    <div class="tab-pane" id="doh">
-                        {% include 'home/doh.html' %}
-                    </div>
-
-                    <!-- /.tab-pane -->
-                </div>
-                <!-- /.tab-content -->
-            </div><!-- /.card-body -->
-        </div>
-        <!-- ./card -->
-        <!-- /.col -->
 
 
         <div class="card-deck d-sm-none">

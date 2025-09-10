@@ -107,30 +107,13 @@
                 <ul class="nav nav-pills p-2">
                     <li class="nav-item"><a class="nav-link" href="#all_configs" data-toggle="tab"><i
                                 class="fa-solid fa-grip fa-margin"></i> {{_('user.home.all_configs')}}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#speedtest" data-toggle="tab"><i
-                                class="fa-solid fa-gauge-high fa-margin"></i> {{_('user.home.speedtest.title')}}</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#doh" data-toggle="tab"><i
-                                class="fa-solid fa-sitemap fa-margin"></i> {{_('user.home.doh')}}</a></li>
                 </ul>
             </div><!-- /.card-header -->
             <div class="card-body">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="default">
-                        {{_('user.home.select_tool')}}
-                    </div>
-                    <div class="tab-pane" id="all_configs">
+                    <div class="tab-pane active" id="all_configs">
                         {% include 'home/all-configs.html'%}
                     </div>
-                    <div class="tab-pane" id="speedtest">
-                        {% include 'home/speedtest.html' %}
-                    </div>
-                    <!-- /.tab-pane -->
-                    <div class="tab-pane" id="doh">
-                        {% include 'home/doh.html' %}
-                    </div>
-
-                    <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->
             </div><!-- /.card-body -->

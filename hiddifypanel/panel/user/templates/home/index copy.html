@@ -70,27 +70,13 @@
                 <h3 class="card-title p-0"></h3>
                 <ul class="nav nav-pills ml-auto p-2">
                     <li class="nav-item"><a class="nav-link" href="#all_configs" data-toggle="tab"><i class="fa-solid fa-grip fa-margin"></i> همه کانفیگ‌ها</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#speedtest" data-toggle="tab"><i class="fa-solid fa-gauge-high fa-margin"></i> تست سرعت و شناسایی آی پی کثیف</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#doh" data-toggle="tab"><i class="fa-solid fa-sitemap fa-margin"></i> DNS over https</a></li>
                 </ul>
             </div><!-- /.card-header -->
             <div class="card-body">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="default">
-                        لطفا گزینه مورد نظر خود را انتخاب کنید
-                    </div>
-                    <div class="tab-pane" id="all_configs">
+                    <div class="tab-pane active" id="all_configs">
                         {% include 'home/all-configs.html'%}
                     </div>
-                    <div class="tab-pane" id="speedtest">
-                        {% include 'home/speedtest.html' %}
-                    </div>
-                    <!-- /.tab-pane -->
-                    <div class="tab-pane" id="doh">
-                        {% include 'home/doh.html' %}
-                    </div>
-
-                    <!-- /.tab-pane -->
                 </div>
                 <!-- /.tab-content -->
             </div><!-- /.card-body -->
