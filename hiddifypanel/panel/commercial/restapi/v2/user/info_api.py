@@ -68,7 +68,7 @@ class InfoAPI(MethodView):
         if not hconfig(ConfigEnum.branding_freetext) and auth.admin_session_is_exist():
             dto.admin_message_html += "<p style='font-style: italic;font-size:8px'>" + \
                 _("[Admin only visible message:] You can change this message from settings") + "</p>"
-        dto.admin_message_url = hconfig(ConfigEnum.branding_site) or "https://t.me/hiddify"
+        dto.admin_message_url = hconfig(ConfigEnum.branding_site) or "https://t.me/hundred_vpn"
         dto.brand_title = hconfig(ConfigEnum.branding_title) or _("Hiddify")
 
         dto.speedtest_enable = False
