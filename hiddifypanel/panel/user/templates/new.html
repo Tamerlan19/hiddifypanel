@@ -23,7 +23,13 @@
     <!--<script src="node_modules/smartbanner.js/dist/smartbanner.min.js"></script>-->
     <script>
       window.appVersion = '{{version}}';
-      window.deepLink = "hiddify://import/{{profile_url}}"
+      const profileUrl = '{{profile_url}}';
+      const isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent);
+      if (isIOS) {
+        window.deepLink = `v2raytun://import/${profileUrl}`;
+      } else {
+        window.deepLink = `hiddify://import/${profileUrl}`;
+      }
     </script>
   </body>
 </html>
